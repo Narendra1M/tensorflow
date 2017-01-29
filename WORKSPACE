@@ -5,21 +5,21 @@ load("//tensorflow:workspace.bzl", "check_version", "tf_workspace")
 # We must check the bazel version before trying to parse any other BUILD files,
 # in case the parsing of those build files depends on the bazel version we
 # require here.
-check_version("0.4.2")
+check_version("0.4.3")
 
 # Uncomment and update the paths in these entries to build the Android demo.
-#android_sdk_repository(
-#    name = "androidsdk",
-#    api_level = 23,
-#    build_tools_version = "23.0.1",
-#    # Replace with path to Android SDK on your system
-#    path = "<PATH_TO_SDK>",
-#)
+android_sdk_repository(
+    name = "androidsdk",
+    api_level = 25,
+    build_tools_version = "25.0.3",
+    # Replace with path to Android SDK on your system
+    path = "</home/narendra/Android/Sdk>",
+)
 #
-#android_ndk_repository(
-#    name="androidndk",
-#    path="<PATH_TO_NDK>",
-#    api_level=21)
+android_ndk_repository(
+    name="androidndk",
+    path="</home/narendra/Android/Sdk",
+    api_level=25)
 
 # Please add all new TensorFlow dependencies in workspace.bzl.
 tf_workspace()
